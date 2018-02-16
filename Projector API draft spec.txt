@@ -1,0 +1,52 @@
+projector [/api/v2/projector]
+|
++-control
+| |
+| +-power: returns On | Off
+| | +-power/on
+| | +-power/off
+| |
+| +-source: returns RGB | RGB2 | DVI | Video | S-Video | Component | Wireless | HDMI
+| | +-source/<name>
+| |
+| +-lamphours: returns integer hours
+| | +-lamphours/clear: clears projector counter
+| |
+| +-autoimage: triggers auto image adjustment
+| 
+|
++-adjust: returns list of integer-based adjustments
+| |
+| +-brightness
+| |  brightness/<0-100>
+| |
+| +-contrast
+| |  contrast/<0-100>
+| |
+| +-color
+| |  color/<0-100>
+| |
+| +-tint
+| |  tint/<0-100>
+| |
+| +-sharpness
+| | +-sharpness/<0-31>
+| 
+|
++-set: returns a list of non-integer settings
+| | 
+| +-scaling
+| | +-scaling/<Fill | 4:3 | 16:9 | LetterBox | Native>
+| |
+| +-colortemp
+| | +-colortemp/<6500 | 9300 | 10500>
+| |
+| +-projectionmode
+| | +-projectionmode/<Front | Rear | Rear+Ceiling | Ceiling>
+| |
+| +-volume: returns integer volume level
+|  
+|
++-button: returns list of supported buttons, one name per line
+  | 
+  +-button/<buttonname>: acts as if the corresponding button were pushed
